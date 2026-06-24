@@ -291,18 +291,34 @@ section {
     gap: 30px;
 }
 
-.galeria-seccion img {
-    width: 320px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
-    transition: var(--transicion-suave);
+/* Contenedor principal alineado al centro */
+.Galería-seccion {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.galeria-seccion img:hover {
+/* Distribución de las imágenes en fila */
+.Galería-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;          /* Espacio uniforme entre imágenes */
+    flex-wrap: wrap;    /* Se adaptan si la pantalla es chica */
+}
+
+/* Tamaño exacto e idéntico para todas las imágenes */
+.Galería-contenedor img {
+    width: 320px;
+    height: 220px;
+    object-fit: cover;  /* Corta la imagen para que llene el espacio sin deformarse */
+    border-radius: 20px;
+    border: 1px solid var(--glass-border, #ccc); /* Respaldo por si no carga tu variable */
+    transition: var(--transicion-suave, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease);
+}
+
+/* Efecto Hover */
+.Galería-contenedor img:hover {
     transform: translateY(-10px) scale(1.05);
-    border-color: var(--color-rosa);
+    border-color: var(--color-rosa, #ff007c);
     box-shadow: 0 15px 35px rgba(255, 0, 124, 0.25);
 }
 
